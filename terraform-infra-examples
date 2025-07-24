@@ -1,0 +1,83 @@
+# 🌐 Terraform Infrastructure Examples
+
+This repository contains modular, real-world examples for deploying cloud infrastructure using **Terraform** on **Azure** and **AWS**.
+
+---
+
+## 📁 Folder Structure
+
+```
+terraform-infra-examples/
+├── azure-vm-module/
+│   ├── main.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── README.md
+│
+├── aws-networking/
+│   ├── vpc.tf
+│   ├── variables.tf
+│   ├── outputs.tf
+│   └── README.md
+│
+├── multi-env-structure/
+│   ├── dev/
+│   │   └── main.tf
+│   ├── staging/
+│   │   └── main.tf
+│   ├── prod/
+│   │   └── main.tf
+│   └── backend.tf
+│
+└── README.md
+```
+
+---
+
+## 🧩 Projects Included
+
+### 1. `azure-vm-module`
+Deploys a virtual machine on Azure using reusable module inputs.
+
+- Creates: Resource Group, Network Interface, Public IP, VM
+- Uses `azurerm` provider
+- Parameterized via `variables.tf`
+
+### 2. `aws-networking`
+Basic AWS networking setup including VPC, subnets, route tables, and IGW.
+
+- Region defined in variables
+- CIDRs customizable
+
+### 3. `multi-env-structure`
+Example of separating environments: dev / staging / prod
+
+- Different state per environment
+- Uses remote backend setup example (e.g., Azure Storage or S3)
+
+---
+
+## 🛠️ How to Use
+
+1. Install Terraform (>= v1.2)
+2. Navigate into desired folder
+3. Run:
+   ```bash
+   terraform init
+   terraform plan
+   terraform apply
+   ```
+
+---
+
+## 📘 Requirements
+
+- Terraform CLI
+- Azure CLI or AWS CLI configured
+- Proper credentials via environment variables or profiles
+
+---
+
+## 📄 License
+
+MIT License
